@@ -10,6 +10,10 @@
 
   --color-card: #4A4A4A;
   --color-border: #828282;
+  --color-line: #363636;
+
+  --color-input: #F5F5F5;
+  --color-inputText: #1C1C1C;
 
   /* size */
   --text-base: 16px;
@@ -18,6 +22,6 @@
 
 @utility interactive {
   @apply transition-all duration-200;
-  @apply hover:cursor-pointer hover:bg-baseTextColor hover:text-background
+  @apply hover:cursor-pointer hover:text-background
 }
 
