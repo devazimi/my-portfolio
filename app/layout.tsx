@@ -1,8 +1,8 @@
 import "./globals.css";
-import { Outfit  } from "next/font/google";
+import { Outfit } from "next/font/google";
 
-const outfit = Outfit ({
-  weight: '500',
+const outfit = Outfit({
+  weight: "500",
   subsets: ["latin"],
 });
 
