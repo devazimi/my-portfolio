@@ -2,6 +2,7 @@
 
 import Header from "@/components/Header";
 import Main from "@/components/Main";
+import Skills from "@/components/Skills";
 
 export default function HomePage() {
   return (
@@ -11,6 +12,8 @@ export default function HomePage() {
         <Header />
 
         <hr className="w-full h-3 border-none my-5 rounded-full bg-line" />
+
+        <Skills />
 
         {/* main / projects */}
         <Main />

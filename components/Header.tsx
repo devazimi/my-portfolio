@@ -1,7 +1,53 @@
 "use client";
 
 import { LuBriefcaseBusiness } from "react-icons/lu";
-import { FaGithub, FaLinkedin, FaTelegramPlane } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaPhone,
+  FaEnvelope,
+} from "react-icons/fa";
+import { IconType } from "react-icons";
+import Link from "next/link";
+
+interface NetworksType {
+  id: number;
+  title: string;
+  description: string;
+  icon: IconType;
+  href: string;
+}
+
+const networks: NetworksType[] = [
+  {
+    id: 1,
+    title: "GITHUB",
+    description: "You can see my projects on GitHub",
+    icon: FaGithub,
+    href: "https://github.com/devazimi",
+  },
+  {
+    id: 2,
+    title: "LINKEDIN",
+    description: "You can contact me on LinkedIn",
+    icon: FaLinkedin,
+    href: "https://www.linkedin.com/in/hamidreza-azimi-jozani-245661364/",
+  },
+  {
+    id: 3,
+    title: "EMAIL",
+    description: "azimihamidreza.work@gmail.com",
+    icon: FaEnvelope,
+    href: "mailto:azimihamidreza.work@gmail.com",
+  },
+  {
+    id: 4,
+    title: "PHONE",
+    description: "+98 912 345 6789",
+    icon: FaPhone,
+    href: "tel:+989123456789",
+  },
+];
 
 export default function Header() {
   return (
@@ -30,45 +76,84 @@ export default function Header() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-5 p-2 items-center justify-center mt-10 md:mt-0">
-          <div className="w-full flex justify-between gap-8">
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <FaGithub className="text-md md:text-xl text-secondTextColor" />
-                <h6 className="text-xs md:text-base font-bold text-secondTextColor">
-                  GITHUB
-                </h6>
-              </div>
-              <p className="text-sm md:text-base text-thirdTextColor">
-                you can see my projects at github
-              </p>
-            </div>
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <FaLinkedin className="text-md md:text-xl text-secondTextColor" />
-                <h6 className="text-xs md:text-base font-bold text-secondTextColor">
-                  LINKEDIN
-                </h6>
-              </div>
-              <p className="text-sm md:text-base text-thirdTextColor">
-                you can contact me at linkedin
-              </p>
-            </div>
-          </div>
-          <form className="relative col-span-2 w-full" action="">
-            <input
-              className="w-full h-12 sm:h-12 bg-input outline-none text-inputText text-xs sm:text-base pl-3 pr-25 rounded-sm"
-              type="text"
-              placeholder="contact me with a message"
-            />
-            <button
-              className="absolute h-full right-0 top-1/2 -translate-y-1/2 text-xs sm:text-base text-line outline-none px-2 sm:py-2 sm:px-5 interactive-bg-light"
-              type="submit"
+        <div className="flex gap-5 p-2 items-center justify-center mt-10 md:mt-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 w-full gap-8">
+            {networks.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  className="flex flex-col gap-2 bg-card py-3 px-5 rounded-2xl hover:bg-[#262626] hover:border-line hover:-translate-y-1 transition-all duration-300"
+                >
+                  {/* <div className="flex flex-col gap-2 bg-card py-3 px-5 rounded-2xl"> */}
+                  <div className="flex items-center gap-2">
+                    <Icon className="text-xl text-secondTextColor" />
+                    <h6 className="text-base font-bold text-secondTextColor">
+                      {item.title}
+                    </h6>
+                  </div>
+                  <p className="text-base text-thirdTextColor">
+                    {item.description}
+                  </p>
+                  {/* </div> */}
+                </Link>
+              );
+            })}
+            {/* <Link
+              href={
+                "https://www.linkedin.com/in/hamidreza-azimi-jozani-245661364/"
+              }
             >
-              <FaTelegramPlane className="text-2xl" />
-            </button>
-          </form>
+              <div className="flex flex-col gap-2 bg-card py-3 px-5 rounded-2xl">
+                <div className="flex items-center gap-2">
+                  <FaGithub className="text-xl text-secondTextColor" />
+                  <h6 className="text-base font-bold text-secondTextColor">
+                    GITHUB
+                  </h6>
+                </div>
+                <p className="text-base text-thirdTextColor">
+                  you can see my projects at github
+                </p>
+              </div>
+            </Link>
+            <Link
+              href={
+                "https://www.linkedin.com/in/hamidreza-azimi-jozani-245661364/"
+              }
+            >
+              <div className="flex flex-col gap-2 bg-card py-3 px-5 rounded-2xl">
+                <div className="flex items-center gap-2">
+                  <FaLinkedin className="text-xl text-secondTextColor" />
+                  <h6 className="text-base font-bold text-secondTextColor">
+                    LINKEDIN
+                  </h6>
+                </div>
+                <p className="text-base text-thirdTextColor">
+                  you can contact me at linkedin
+                </p>
+              </div>
+            </Link>
+            <div className="flex flex-col gap-2 bg-card py-3 px-5 rounded-2xl">
+              <div className="flex items-center gap-2">
+                <FaEnvelope className="text-secondTextColor text-xl" />
+                <h6 className="font-bold text-secondTextColor">EMAIL</h6>
+              </div>
+              <p className="text-thirdTextColor">your-email@example.com</p>
+            </div>
+
+            <div className="flex flex-col gap-2 bg-card py-3 px-5 rounded-2xl">
+              <div className="flex items-center gap-2">
+                <FaPhone className="text-secondTextColor text-xl" />
+                <h6 className="font-bold text-secondTextColor">PHONE</h6>
+              </div>
+              <p className="text-thirdTextColor">+98 912 345 6789</p>
+            </div> */}
+          </div>
         </div>
+        {/* <div className="w-full flex flex-col gap-5 mt-5"> */}
+
+        {/* </div> */}
       </div>
     </header>
   );
