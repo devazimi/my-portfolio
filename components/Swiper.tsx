@@ -11,33 +11,30 @@ import "swiper/css/effect-coverflow";
 
 const images = [
   {
-    id: 1,
+    id: 2,
     projectImages: [
-      "/images/3.jpg",
-      "/images/1.jpg",
-      "/images/2.jpg",
-      "/images/4.jpg",
-      "/images/5.jpg",
-      "/images/1.jpg",
-      "/images/2.jpg",
-      "/images/3.jpg",
-      "/images/4.jpg",
-      "/images/5.jpg",
+      "/images/rankup/rankup1.png",
+      "/images/rankup/rankup2.png",
+      "/images/rankup/rankup3.png",
+      "/images/rankup/rankup4.png",
+      "/images/rankup/rankup5.png",
+      "/images/rankup/rankup6.png",
     ],
   },
   {
-    id: 2,
+    id: 1,
     projectImages: [
-      "/images/5.jpg",
-      "/images/4.jpg",
-      "/images/3.jpg",
-      "/images/2.jpg",
-      "/images/1.jpg",
-      "/images/1.jpg",
-      "/images/2.jpg",
-      "/images/3.jpg",
-      "/images/4.jpg",
-      "/images/5.jpg",
+      "/images/pasjeld/pasjeld1.png",
+      "/images/pasjeld/pasjeld2.png",
+      "/images/pasjeld/pasjeld3.png",
+      "/images/pasjeld/pasjeld4.png",
+      "/images/pasjeld/pasjeld5.png",
+      "/images/pasjeld/pasjeld6.png",
+      "/images/pasjeld/pasjeld7.png",
+      "/images/pasjeld/pasjeld8.png",
+      "/images/pasjeld/pasjeld9.png",
+      "/images/pasjeld/pasjeld10.png",
+      "/images/pasjeld/pasjeld11.png",
     ],
   },
 ];
@@ -89,14 +86,14 @@ export default function GallerySlider({ id }: { id: number }) {
         {currentProjectImages?.projectImages.map((image, index) => (
           <SwiperSlide
             key={index}
-            className="!w-[220px] md:!w-[280px] lg:!w-[320px]"
+            className="!w-[280px] md:!w-[500px] lg:!w-[700px]"
           >
-            <div className="relative h-[320px] md:h-[420px] w-full overflow-hidden">
+            <div className="relative aspect-video w-full overflow-hidden ">
               <Image
                 src={image}
                 fill
                 alt={`slide-${index}`}
-                className="object-cover"
+                className="object-contain"
               />
             </div>
           </SwiperSlide>

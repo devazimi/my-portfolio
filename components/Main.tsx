@@ -6,17 +6,17 @@ import GallerySlider from "./Swiper";
 const projects = [
   {
     id: 1,
-    link: "#",
+    link: "https://pasjeld.vercel.app",
     title: "Pasjeld Book Store",
     hero: "Pasjeld – Online Book Shopping Platform",
-    desc: "Pasjeld is a modern full-stack e-commerce bookstore application developed using Next.js, TypeScript, Tailwind CSS, Prisma, SQLite, NextAuth, and Zod, providing secure user authentication, robust data validation, efficient database management, and a responsive user experience for discovering and purchasing books.",
+    desc: "Pasjeld is a modern full-stack bookstore application built with Next.js, React, and TypeScript. It leverages Prisma ORM with LibSQL/Turso for database management, NextAuth.js for secure authentication, bcryptjs for password security, and Zod for data validation. The user interface is crafted with Tailwind CSS and React Icons, delivering a responsive, scalable, and user-friendly experience for browsing, managing, and purchasing books.",
   },
   {
     id: 2,
-    link: "#",
-    title: "Programming Quiz Platform",
+    link: "https://rankupquiz.vercel.app",
+    title: "Rankup Quiz Platform",
     hero: "Programming Knowledge Testing System",
-    desc: "A web-based programming quiz application that allows users to test their coding knowledge through multiple-choice questions, track their progress, and improve their problem-solving skills in an interactive environment.",
+    desc: "A full-stack programming quiz application built with Next.js, React, and TypeScript. The project utilizes Prisma ORM with LibSQL for efficient database management, NextAuth.js and bcryptjs for secure user authentication, and Zod for robust data validation. The user interface is developed using Material UI (MUI), Tailwind CSS, Emotion, and React Icons, providing a modern, responsive, and intuitive experience for creating, managing, and taking programming quizzes.",
   },
 ];
 
@@ -43,9 +43,14 @@ export default function Main() {
             </h6>
             <div className="flex flex-col w-full md:w-md gap-3">
               <p className="text-secondTextColor">{project.desc}</p>
-              <button className="w-50 h-10 bg-btn-dark text-sm text-btn-light p-1 rounded-md interactive-btn-to-light">
+              <Link 
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer">
+                <button className="w-50 h-10 bg-btn-dark text-sm text-btn-light p-1 rounded-md interactive-btn-to-light">
                 VISIT PROJECT ONLINE
               </button>
+              </Link>
             </div>
           </div>
           <div className="my-1">

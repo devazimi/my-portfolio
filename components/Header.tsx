@@ -43,9 +43,9 @@ const networks: NetworksType[] = [
   {
     id: 4,
     title: "PHONE",
-    description: "+98 912 345 6789",
+    description: "+98 998 199 4222",
     icon: FaPhone,
-    href: "tel:+989123456789",
+    href: "tel:+989981994222",
   },
 ];
 
@@ -55,7 +55,7 @@ export default function Header() {
       <div className="flex flex-row gap-1 items-center">
         <LuBriefcaseBusiness className="text-secondTextColor text-2xl" />
         <p className="text-secondTextColor text-base font-bold">
-          My Personal Portfolio
+          Hamidreza Azimi
         </p>
       </div>
       <h1 className="font-extrabold text-2xl md:text-6xl leading-relaxed [word-spacing:2]">
@@ -85,8 +85,9 @@ export default function Header() {
                   key={item.id}
                   href={item.href}
                   className="flex flex-col gap-2 bg-card py-3 px-5 rounded-2xl hover:bg-[#262626] hover:border-line hover:-translate-y-1 transition-all duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  {/* <div className="flex flex-col gap-2 bg-card py-3 px-5 rounded-2xl"> */}
                   <div className="flex items-center gap-2">
                     <Icon className="text-xl text-secondTextColor" />
                     <h6 className="text-base font-bold text-secondTextColor">
@@ -96,64 +97,11 @@ export default function Header() {
                   <p className="text-base text-thirdTextColor">
                     {item.description}
                   </p>
-                  {/* </div> */}
                 </Link>
               );
             })}
-            {/* <Link
-              href={
-                "https://www.linkedin.com/in/hamidreza-azimi-jozani-245661364/"
-              }
-            >
-              <div className="flex flex-col gap-2 bg-card py-3 px-5 rounded-2xl">
-                <div className="flex items-center gap-2">
-                  <FaGithub className="text-xl text-secondTextColor" />
-                  <h6 className="text-base font-bold text-secondTextColor">
-                    GITHUB
-                  </h6>
-                </div>
-                <p className="text-base text-thirdTextColor">
-                  you can see my projects at github
-                </p>
-              </div>
-            </Link>
-            <Link
-              href={
-                "https://www.linkedin.com/in/hamidreza-azimi-jozani-245661364/"
-              }
-            >
-              <div className="flex flex-col gap-2 bg-card py-3 px-5 rounded-2xl">
-                <div className="flex items-center gap-2">
-                  <FaLinkedin className="text-xl text-secondTextColor" />
-                  <h6 className="text-base font-bold text-secondTextColor">
-                    LINKEDIN
-                  </h6>
-                </div>
-                <p className="text-base text-thirdTextColor">
-                  you can contact me at linkedin
-                </p>
-              </div>
-            </Link>
-            <div className="flex flex-col gap-2 bg-card py-3 px-5 rounded-2xl">
-              <div className="flex items-center gap-2">
-                <FaEnvelope className="text-secondTextColor text-xl" />
-                <h6 className="font-bold text-secondTextColor">EMAIL</h6>
-              </div>
-              <p className="text-thirdTextColor">your-email@example.com</p>
-            </div>
-
-            <div className="flex flex-col gap-2 bg-card py-3 px-5 rounded-2xl">
-              <div className="flex items-center gap-2">
-                <FaPhone className="text-secondTextColor text-xl" />
-                <h6 className="font-bold text-secondTextColor">PHONE</h6>
-              </div>
-              <p className="text-thirdTextColor">+98 912 345 6789</p>
-            </div> */}
           </div>
         </div>
-        {/* <div className="w-full flex flex-col gap-5 mt-5"> */}
-
-        {/* </div> */}
       </div>
     </header>
   );
